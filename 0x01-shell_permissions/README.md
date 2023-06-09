@@ -9,3 +9,5 @@
 8-James_Bond writes a script that sets only all permissions for other users of the hello file
 9-John_Doe sets permissions to 753
 10-mirror_permissions copies the permissions of hello to olleh
+11-directories_permissions adds execute permissions to all subdirectories of the current directory for owner, group and other users but regular files are not changed
+12-directory-permissions creates new directory with 751 permissions
