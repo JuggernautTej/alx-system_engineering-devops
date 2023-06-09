@@ -7,3 +7,5 @@
 6-multiple_permissions adds execute permission to the ownere and group owner and read permission to other users of the file hello
 7-everybody writes a script that assigns execution permission to owner, group and others
 8-James_Bond writes a script that sets only all permissions for other users of the hello file
+9-John_Doe sets permissions to 753
+10-mirror_permissions copies the permissions of hello to olleh
