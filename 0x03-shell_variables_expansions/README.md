@@ -9,3 +9,5 @@
 8-true_knowledge prints the result of the addition of 128 and the value stored in the variable TRUEKNOWLEDGE
 9-divide_and_rule prints the result of POWER divided by DIVIDE variables
 10-love_exponent_breath prints the result of BREATH to the power LOVE variables
+11-binary_to_decimal creates a script that converts a number from base 2 to base 10
+12-combinations creates a script that displays alll possible combinations of two letters, a to z, except oo
