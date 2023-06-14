@@ -1,0 +1,2 @@
+#!/bin/bash
+echo -e "Number: %.2f" $NUM 
