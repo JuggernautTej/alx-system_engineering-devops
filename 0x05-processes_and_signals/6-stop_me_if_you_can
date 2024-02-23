@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# Stop me!!
+# A script that stops a process
 
-pkill -9 4-to_infinity_and_beyond
+pkill -f '4-to_infinity_and_beyond'
