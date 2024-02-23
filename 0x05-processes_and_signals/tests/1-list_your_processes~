@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script displays a lsit of currently running processes.
+
+ps -A
