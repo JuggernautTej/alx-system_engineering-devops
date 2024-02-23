@@ -2,4 +2,4 @@
 # This script kills a script
 
 script_id=$(pgrep -fo 7-highlander)
-kill "$script_id"
+kill -9 "$script_id"
