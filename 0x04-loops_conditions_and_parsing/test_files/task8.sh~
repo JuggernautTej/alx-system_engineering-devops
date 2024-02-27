@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script displays filename
+
+LIST=(*-*)
+for i in "${LIST[@]}";do
+    name="${file//*-/}"
+    echo "$name"
+done
