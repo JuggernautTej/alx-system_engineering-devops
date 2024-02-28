@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This displays listening ports that only shows listening sockets
+# and shows the PIID and name of thte program to which each socket
+#+ belongs
+
+netstat -tulpnx
