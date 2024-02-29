@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script changes local hosts and facebook's addresses
+
+fbk_addy=8.8.8.8
+local_new_id=127.0.0.2
+local_old_id=127.0.0.1
+cp /etc/hosts ~/hosts.new
+sed -i "s/$local_old_id/$local_new_id/g" ~/hosts.new
+echo "$fbk_addy facebook.com" >> ~/hosts.new
+cat ~/hosts.new > /etc/hosts
