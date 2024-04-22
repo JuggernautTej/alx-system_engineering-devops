@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # A script that creates a RSA key pair
 
-ket_name="school"
+key_name="school"
 key_bits=4096
 passphrase="betty"
 
