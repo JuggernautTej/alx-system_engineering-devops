@@ -5,7 +5,7 @@
 set -e
 
 sudo apt-get update -y
-sudo apt-get install nginx -y
+sudo apt-get install -y nginx
 
 # sudo service nginx start
 # sudo ufw allow 'OpenSSH'
@@ -13,5 +13,9 @@ sudo apt-get install nginx -y
 
 # cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.bckp
 sudo echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
+
+sudo echo "<html><head><meta http-equiv=\"refresh\" content=\"0; url=https://github.com/JuggernautTej></head><body></body></html>" | sudo tee /var/www/html/redirect_me.html
+
+sudo sed -i '/listen 80 default_server/a return 301 https://github.com/JuggernautTej;' etc/nginx/sites-available/default
 
 sudo service nginx restart
