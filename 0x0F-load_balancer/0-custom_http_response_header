@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# A bash script that configures a Nginx server to have a custom 404 page that contains the string
+
+#This script stops if any command exits with a non-zero status
+set -e
+
+sudo apt-get update -y
+sudo apt-get install -y nginx
+
+sudo service nginx start
+sudo sed -i "/http {/a\ add_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
+sudo echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
+
+sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+
+sudo echo "server {
+     listen 80 default_server;
+     listen [::]:80 default_server;
+
+     root /var/www/html;
+     index index.html index.htm index.nginx-debian.html;
+     location /redirect_me {
+              return 301 https://github.com/JuggernautTej;
+              }
+     error_page 404 /404.html;
+     location = /404.html{
+              internal;
+              }
+     }" | sudo tee /etc/nginx/sites-available/default
+
+sudo nginx -t
+sudo service nginx restart
