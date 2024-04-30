@@ -2,7 +2,6 @@
 # A bash script that configures a Nginx server
 
 #This script stops if any command exits with a non-zero status
-set -e
 
 sudo apt-get update -y
 sudo apt-get install -y nginx
