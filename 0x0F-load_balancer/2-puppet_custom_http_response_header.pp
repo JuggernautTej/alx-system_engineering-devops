@@ -10,9 +10,9 @@ file { '/usr/share/nginx/html/index.html':
 }
 
 service { 'nginx':
-  ensure   => running,
-  enable   => true,
-  requirre => Package['nginx'],
+  ensure  => running,
+  enable  => true,
+  require => Package['nginx'],
 }
 
 exec { 'add_header':
