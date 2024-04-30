@@ -1,3 +1,5 @@
+#Using Puppet automate the task of creating a custom HTTP header response
+
 package { 'ngnix':
   ensure => installed,
 }
