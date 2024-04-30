@@ -1,0 +1,9 @@
+#Using Puppet automate the task of creating a custom HTTP header response
+
+exec { 'command':
+  command     => 'apt-get -y update;
+',
+  path        => ['/bin', '/sbin', '/usr/bin', '/usr/sbin'],
+  refreshonly => true,
+  subscribe   => Exec['add_header'],
+}
