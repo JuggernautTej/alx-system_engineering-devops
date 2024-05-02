@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script starts the Apache server and configures the server to return a string when the curl command is used
+sudo service apache2 start
+echo Hello Holberton > /var/www/html/index.html
