@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This script configures a Nginx server to run and listen on port 80
 sudo service nginx start
-suod ufw allow 'Nginx HTTP'
+sudo ufw allow 'Nginx HTTP'
