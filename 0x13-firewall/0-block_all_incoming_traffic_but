@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# Update packages
+sudo apt-get -y update
+
+# Instal unmonitored firewall if not installed
+sudo apt-get -y install ufw
+
+# Disable firewall temporarily
+sudo ufw disable
+
+# Set ufw to default
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+# Stop the fiewall service
+sudo service ufw stop
+
+# Set up connections based on requirements
+sudo ufw allow 22/tcp
+sudo ufw allow 443/tcp
+sudo ufw allow 80/tcp
+
+# Enable firewall with the new rules
+sudo ufw enable
+
+# Check status
+sudo ufw status
