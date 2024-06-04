@@ -16,6 +16,9 @@ def top_ten(subreddit):
     Returns:
     None
     """
+    if subreddit is None or not subreddit or not isinstance(subreddit, str):
+        return None
+
     url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
     headers = {'User-Agent': 'My Reddit App (v1.0)'}
     try:
