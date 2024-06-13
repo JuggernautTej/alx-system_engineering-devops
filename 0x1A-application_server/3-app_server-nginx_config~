@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# A bash script that configures a Nginx server to serve the page
+# on the route '/airbnb-onepage/' locally and on its public IP on port 80.
+# The Nginx server proxy requests to the process listening on port 5000.
+
+set -e
+
+FILE_CONFIG="/etc/nginx/sites-available/airbnb.conf"
+
+# The Nginx configuration
+
+sudo tee "$FILE_CONFIG" > /dev/null <<'EOL'
+server {
+       listen 80;
+       listen [::]:80 default_server;
+       add_header X-Served-By $hostname;
+
+       location /airbnb-onepage/ {
+       		proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
+		# proxy_set_header Host $host;
+		# proxy_set_header X-Real-IP $remote_addr;
+		# proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		# proxy_set_header X-Forwarded-Proto $scheme;
+	}
+}
+EOL
+
+# The symbolic link to enable the site
+sudo ln -sf /etc/nginx/sites-available/airbnb.conf /etc/nginx/sites-enabled/
+
+# Tests the configuration
+sudo nginx -t
+
+# Restart Nginx to apply changes
+sudo service nginx restart
